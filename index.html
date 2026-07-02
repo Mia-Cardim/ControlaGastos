@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ControlaGastos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>ControlarGastos</h1>
+
+        <h2>Cadastro de Renda</h2>
+        <label for="renda">Renda Mensal</label>
+        <input type="number" id="renda" placeholder="Digite sua renda mensal">
+
+        <hr>
+
+        <h2>Cadastro de Gastos</h2>
+
+        <label for="descricao">Descrição</label>
+        <input type="text" id="descricao" placeholder="Ex.: Mercado">
+
+        <label for="categoria">Categoria</label>
+        <select id="categoria">
+            <option>Alimentação</option>
+            <option>Transporte</option>
+            <option>Moradia</option>
+            <option>Lazer</option>
+            <option>Saúde</option>
+            <option>Educação</option>
+            <option>Outros</option>
+        </select>
+
+        <label for="valor">Valor</label>
+        <input type="number" id="valor" placeholder="0,00">
+
+        <div class="botoes">
+            <button id="btnAdicionar">➕ Adicionar Gasto</button>
+            <button id="btnCalcular">Calcular Saldo</button>
+            <button id="btnLimpar">Limpar Campos</button>
+        </div>
+
+        <hr>
+
+        <h2>Resumo Financeiro</h2>
+        <div class="cards">
+            <div class="card renda">
+                <h3>Renda</h3>
+                <p id="totalRenda">R$ 0,00</p>
+            </div>
+            <div class="card gastos">
+                <h3>Gastos</h3>
+                <p id="totalGastos">R$ 0,00</p>
+            </div>
+            <div class="card saldo">
+                <h3>Saldo</h3>
+                <p id="saldoFinal">R$ 0,00</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <h2>Planejamento e Imposto de Renda</h2>
+        <div class="cards">
+            <div class="card" style="background: #7C3AED; text-align: left;">
+                <h3>Método dos Potes</h3>
+                <div id="resultadoPotes" style="margin-top: 10px;">
+                    <p style="font-size: 15px; opacity: 0.8;">Insira sua renda e clique em "Calcular Saldo".</p>
+                </div>
+            </div>
+            <div class="card" style="background: #4B5563; text-align: left;">
+                <h3>Imposto de Renda (IRRF)</h3>
+                <div id="resultadoImposto" style="margin-top: 10px;">
+                    <p style="font-size: 15px; opacity: 0.8;">Aguardando cálculo da renda...</p>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <h2>Lista de Gastos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Categoria</th>
+                    <th>Valor</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody id="listaGastos"></tbody>
+        </table>
+
+    </div>
+
+    <script type="module" src="dist/script.js"></script>
+
+    </body>
+</html>
